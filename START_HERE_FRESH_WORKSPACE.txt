@@ -1,0 +1,38 @@
+SMARTDEVAGENTS - FRESH WORKSPACE
+
+IMPORTANT
+This version no longer silently resumes the first/old MongoDB project when the UI starts.
+It uses a new browser storage key and requires an explicit project selection.
+
+1. STOP the old backend terminal and old Vite terminal.
+2. Extract this ZIP into a NEW folder (do not overwrite the old project folder).
+3. Open the NEW folder in VS Code.
+4. Configure backend/.env from backend/.env.example.
+5. If you want a completely fresh MongoDB workspace, use:
+   DATABASE_NAME=smartdevagents_workspace
+   (or another new database name).
+6. Start backend from the NEW folder:
+   cd backend
+   python -m uvicorn app.main:app --reload
+7. In a second terminal from the NEW folder:
+   cd frontend
+   npm install
+   npm run dev
+8. Open the NEW Vite URL. The top bar should say "No project selected" until YOU choose/create one.
+9. Click Dashboard -> New Project and create the new project.
+
+If the browser still shows the old UI after doing this, close the old Vite terminal/window and open the URL printed by the NEW `npm run dev` command.
+
+
+10. Product Manager structured-output resilience:
+    - Free OpenRouter responses are parsed and recursively schema-validated.
+    - Missing harmless nested fields are normalized instead of causing a 502.
+    - If both parsing/repair attempts fail, Product Manager uses a deterministic editable fallback.
+    - Architect and Developer plan stages have the same deterministic safety net.
+    - A malformed LLM response therefore must not strand the project at HTTP 502.
+
+11. For a clean workflow test, use a NEW project name (for example "College Event Management System")
+    and verify:
+    Product Manager -> Developer Review -> Human Approval -> Architect -> Human Approval
+    -> Developer -> Human Approval -> Tester -> Run Tests -> Human Approval -> Reviewer
+    -> Generated Project -> Preview -> Export.
